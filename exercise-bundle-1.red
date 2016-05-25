@@ -21,13 +21,13 @@ comment {
     think of them as a constant structure.
 }
 
-ex1: context[
+ex1: context [
     text: "Determine the speed of a bicycle given its wheel's diameter and the rounds per second"
 
     bicycle-speed: function ["Returns the speed of a bicycle"
-                             diam "Diameter of the wheels"
-                             nrounds "Rounds per second"] [
-        pi * nrounds * diam
+                             diameter "Diameter of the wheels"
+                             rounds "Rounds per second"] [
+        pi * rounds * diameter
     ]
 ]
 
@@ -39,19 +39,19 @@ comment {
     In Red, we use the / symbol, because it gives the idea of a path to something
 }
 
-pi-twice: pi * 2 ;we can define stuff even outside some code block
+tau: pi * 2 ;we can define stuff even outside some code block
 g: 9.81
 
-ex2: context[
+ex2: context [
     text: "Determine the length of a pendulum given its oscillation period"
 
     length-pendulum: function ["Return the lenght of a pendulum"
                                period "Its oscillation period"] [
-        (square(period / pi-twice)) / g
+        divide power divide period tau 2 g             ;-- was (square(period / tau)) / g
     ]
 ]
 
-ex3: context[
+ex3: context [
     text: "Determine the distance between two cartesian coordinates"
 
     comment {
@@ -119,7 +119,7 @@ ex3: context[
     ]
 ]
 
-ex4: context[
+ex4: context [
     text: "Convert a color from RGB (red green blue) to the printers standard"
 
     rgb-to-printer: function ["Convert from RGB to printer standard"
@@ -135,7 +135,7 @@ ex4: context[
     ]
 ]
 
-ex5: context[
+ex5: context [
     text: "Calculate the Maximum Common Divider of two numbers"
 
     MCD: function [a b][         ;the MCD is the MCD, if documentation is required for this, first do some math at school
@@ -144,7 +144,7 @@ ex5: context[
     ]
 ]
 
-ex6: context[
+ex6: context [
     text: "Given a fraction, reduce it to its minimal terms"
 
     num: function [frac] [first frac]
@@ -180,7 +180,7 @@ ex6: context[
     ]
 ]
 
-ex7: context[
+ex7: context [
     text: "Multiply two fractions together"
 
     frac-prod: function ["Multiplies two fractions"
@@ -211,12 +211,8 @@ comment {
 
 iota: function ["Return a sequence of number from 1 to n"
                 n "End limit of sequence"] [
-    ret: copy []
-
-    while [n > 0] [ ; Red also has looping tools.
-      append ret n  ; While I prefer the functional way
-      n: n - 1      ; it's no sin to iterate over a list the "old but gold" way
-    ]
-    reverse ret
+    i: 0
+    seq: copy []
+    loop n [append seq i: i + 1]
 ]
 
