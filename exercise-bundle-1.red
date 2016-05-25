@@ -39,7 +39,7 @@ comment {
     In Red, we use the / symbol, because it gives the idea of a path to something
 }
 
-pi-twice: pi * 2 ;we can define stuff even outside some code block
+tau: pi * 2 ;we can define stuff even outside some code block
 g: 9.81
 
 ex2: context[
@@ -47,7 +47,7 @@ ex2: context[
 
     length-pendulum: function ["Return the lenght of a pendulum"
                                period "Its oscillation period"] [
-        (square(period / pi-twice)) / g
+        (square(period / tau)) / g
     ]
 ]
 
