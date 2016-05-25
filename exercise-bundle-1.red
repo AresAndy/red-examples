@@ -77,7 +77,7 @@ ex3: context[
              not none? (second point)]
     ]
 
-    cartesian3D?: function ["Is this a 3D cartesian point?
+    cartesian3D?: function ["Is this a 3D cartesian point?"
                             point "Thing to be checked"] [
         all [cartesian2D? point       ;In order to be 3D, it must be 2D first
              not none? (third point)]
@@ -109,7 +109,7 @@ ex3: context[
         ]
     ]
 
-    perimeter-triang: function ["Calculate the perimeter of a triangle, using its three corner's coordinates
+    perimeter-triang: function ["Calculate the perimeter of a triangle, using its three corner's coordinates"
                                 a "Coordinates of corner A"
                                 b "Coordinates of corner B"
                                 c "Coordinates of corner C"][
