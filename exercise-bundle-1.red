@@ -25,7 +25,7 @@ ex1: context[
     text: "Determine the speed of a bicycle given its wheel's diameter and the rounds per second"
 
     bicycle-speed: function ["Returns the speed of a bicycle"
-                             diam "Diameter of the wheels
+                             diam "Diameter of the wheels"
                              nrounds "Rounds per second"] [
         pi * nrounds * diam
     ]
