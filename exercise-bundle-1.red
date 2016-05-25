@@ -211,7 +211,6 @@ comment {
 
 iota: function ["Return a sequence of number from 1 to n"
                 n "End limit of sequence"] [
-    i: 0
     seq: copy []
-    loop n [append seq i: i + 1]
+    repeat i n [append seq i]
 ]
