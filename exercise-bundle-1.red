@@ -113,9 +113,9 @@ ex3: context [
                                 a "Coordinates of corner A"
                                 b "Coordinates of corner B"
                                 c "Coordinates of corner C"][
-        ((distanza-coordinate a b) + ;vertex AB
-         (distanza-coordinate b c) + ;vertex BC
-         (distanza-coordinate a c))  ;vertex AC
+        ((distance-coordinate a b) + ;vertex AB
+         (distance-coordinate b c) + ;vertex BC
+         (distance-coordinate a c))  ;vertex AC
     ]
 ]
 
